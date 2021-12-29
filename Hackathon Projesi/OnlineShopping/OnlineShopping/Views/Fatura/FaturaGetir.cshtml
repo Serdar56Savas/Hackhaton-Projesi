@@ -1,0 +1,40 @@
+﻿@model OnlineShopping.Models.Sınıflar.Faturalar
+@{
+    ViewBag.Title = "FaturaGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Fatura Güncelleme Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("FaturaGuncelle", "Fatura", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.faturaID)
+    @Html.LabelFor(x => x.faturaSeriNo)
+    @Html.TextBoxFor(x => x.faturaSeriNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.faturaSıraNo)
+    @Html.TextBoxFor(x => x.faturaSıraNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.VergiDairesi)
+    @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.tarih)
+    @Html.TextBoxFor(x => x.tarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.saat)
+    @Html.TextBoxFor(x => x.saat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.teslimEden)
+    @Html.TextBoxFor(x => x.teslimEden, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.teslimAlan)
+    @Html.TextBoxFor(x => x.teslimAlan, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Toplam)
+    @Html.TextBoxFor(x => x.Toplam, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-primary">Güncelle</button>
+}
+

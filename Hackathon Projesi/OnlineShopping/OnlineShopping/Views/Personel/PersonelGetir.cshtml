@@ -1,0 +1,32 @@
+﻿@model OnlineShopping.Models.Sınıflar.Personel
+
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Personel Güncelleme Ekranı</h2>
+<br />
+@using (Html.BeginForm("PersonelEkle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" })) 
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.personelID)
+        @Html.LabelFor(x => x.personelAd)
+        @Html.TextBoxFor(x => x.personelAd, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(x => x.personelSoyad)
+        @Html.TextBoxFor(x => x.personelSoyad, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(x => x.personelGorsel)
+        <input type="file" name="personelGorsel" />
+        <br />
+        @Html.LabelFor(x => x.Departman)
+        @Html.DropDownListFor(x=>x.Departmanid,(List<SelectListItem>)ViewBag.dgr1,new
+    {@class ="form-control" })
+        <br />
+        <button class="btn btn-default" style="background-color:yellowgreen">Güncelle</button>
+
+    </div>
+}

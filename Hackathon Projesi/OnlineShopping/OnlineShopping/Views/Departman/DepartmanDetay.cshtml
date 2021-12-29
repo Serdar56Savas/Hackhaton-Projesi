@@ -1,0 +1,29 @@
+﻿@using OnlineShopping.Models.Sınıflar
+@model List<Personel>
+@{
+    /**/
+
+    ViewBag.Title = "DepartmanDetay";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Departman Detay Sayfası</h2>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Departman Adı: @ViewBag.d</li>
+</ol>
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Departman Satış</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.personelAd</td>
+            <td>@x.personelSoyad</td>
+            <td><a href="/Departman/DepartmanPersonelSatis/@x.personelID" class="btn btn-default" style="background-color:aquamarine">Satışlar</a></td>
+        </tr>
+    }
+</table>

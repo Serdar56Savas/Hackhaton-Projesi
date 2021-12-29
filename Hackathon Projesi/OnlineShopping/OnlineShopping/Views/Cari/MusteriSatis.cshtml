@@ -1,0 +1,36 @@
+﻿@using OnlineShopping.Models.Sınıflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "MusteriSatis";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Cari Personel Satış</h2>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Cari Adı: @ViewBag.cari</li>
+</ol>
+<table class="table table-condensed">
+    <tr>
+        <th>Satış ID</th>
+        <th>Ürün</th>
+        <th>Personel</th>
+        <th>Fiyat</th>
+        <th>Adet</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+        <th>Yazdır</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.satisID</td>
+            <td>@x.Urun.urunAd</td>
+            <td>@x.Personel.personelAd @x.Personel.personelSoyad</td>
+            <td>@x.fiyat</td>
+            <td>@x.adet</td>
+            <td>@x.ToplamTutar</td>
+            <td>@x.tarih</td>
+            <td><a href="#" class="btn btn-default" style="background-color:lawngreen">Yazdır</a></td>
+        </tr>
+    }
+</table>

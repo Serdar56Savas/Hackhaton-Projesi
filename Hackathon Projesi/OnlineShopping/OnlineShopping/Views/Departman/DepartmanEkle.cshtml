@@ -1,0 +1,16 @@
+﻿@model OnlineShopping.Models.Sınıflar.Departman
+@{
+    ViewBag.Title = "DepartmanEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Departman Sayfası</h2>
+<br />
+<form method="post" class="from-group">
+    @Html.LabelFor(X => X.departmanAd)
+    @Html.TextBoxFor(X => X.departmanAd, new {@class="form-" +
+    "control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+

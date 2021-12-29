@@ -1,0 +1,51 @@
+﻿@using OnlineShopping.Models.Sınıflar
+@model List<Personel>
+@{
+    ViewBag.Title = "Yeni";
+    string[] TableHeaders = new string[] {"personelAd"
+,"personelSoyad"
+,"departmanId"};
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br /><br />
+<div class="table">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                @{
+                    foreach (var head in TableHeaders)
+                    {
+                        <th>
+                            @head
+                        </th>
+
+                    }
+                    <th>
+                        Yeni2
+                    </th>
+
+
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (Model != null)
+                {
+                    foreach (var Data in Model)
+                    {
+                        <tr>
+                            <td>@Data.personelAd</td>
+                            <td>@Data.personelSoyad</td>
+                            <td>@Data.Departmanid</td>
+
+
+                            <td><a href="/Veri/Yeni2" class="btn btn-success" style="width:150px">Yeni2</a></td>
+
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>

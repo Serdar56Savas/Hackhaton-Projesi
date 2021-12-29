@@ -1,0 +1,32 @@
+﻿@model OnlineShopping.Models.Sınıflar.Personel
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Personel Sayfası</h2>
+<br />
+@using (Html.BeginForm("PersonelEkle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.personelAd)
+        @Html.TextBoxFor(x => x.personelAd, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.personelSoyad)
+        @Html.TextBoxFor(x => x.personelSoyad, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.personelGorsel)
+        @*Html.TextBoxFor(x => x.personelSoyad, new { @class = "form-control" })*@
+        <input type="file" name="personelGorsel" />
+        <br />
+
+        @Html.LabelFor(x => x.Departman)
+        @Html.DropDownListFor(x=>x.Departmanid,(List<SelectListItem>)ViewBag.dgr1,new
+        {@class ="form-control" })
+        @*@Html.TextBoxFor(x => x.kategoriid, new { @class = "form-control" })*@
+        <br />
+
+        <button class="btn btn-primary">Kaydet</button>
+    </form>
+}
+

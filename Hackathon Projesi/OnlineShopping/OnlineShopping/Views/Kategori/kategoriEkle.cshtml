@@ -1,0 +1,24 @@
+﻿@model OnlineShopping.Models.Sınıflar.kategori
+@{
+    ViewBag.Title = "kategoriEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<br />
+<h2>Yeni Kategori Sayfası</h2>
+<br />
+<form  method="post" class="from-group">
+    @Html.LabelFor(X=>X.kategoriAd)
+    @Html.TextBoxFor(X => X.kategoriAd, new {@class="form-" +
+    "control" })
+    <br />
+    <button class="btn btn-info" id="Btn1">Kaydet</button>
+    <script>
+        $('#Btn1').click(function () {
+            alert("Kategori Başarıyla Eklendi")
+        });
+    </script>
+
+</form>
+

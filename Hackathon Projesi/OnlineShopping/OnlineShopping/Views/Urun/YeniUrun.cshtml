@@ -1,0 +1,37 @@
+﻿@model OnlineShopping.Models.Sınıflar.Urun
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Ürün Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.urunAd)
+    @Html.TextBoxFor(x => x.urunAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.marka)
+    @Html.TextBoxFor(x => x.marka, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.stok)
+    @Html.TextBoxFor(x => x.stok, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.alisFiyat)
+    @Html.TextBoxFor(x => x.alisFiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.satisFiyat)
+    @Html.TextBoxFor(x => x.satisFiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.kategori.kategoriID)
+    @Html.DropDownListFor(x=>x.kategoriid,(List<SelectListItem>)ViewBag.dgr1,new
+    {@class ="form-control" })
+    @*@Html.TextBoxFor(x => x.kategoriid, new { @class = "form-control" })*@
+    <br />
+    @Html.LabelFor(x => x.UrunGorsel)
+    @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.durum)
+    @Html.TextBoxFor(x => x.durum, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+</form>

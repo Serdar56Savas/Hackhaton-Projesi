@@ -1,0 +1,56 @@
+﻿@using OnlineShopping.Models.Sınıflar
+@model List<Faturalar>
+@{
+    ViewBag.Title = "Index";
+    string[] TableHeaders = new string[] {"faturaSeriNo"
+        ,"tarih"
+        ,"saat"
+        ,"teslimAlan"
+        ,"teslimEden"
+        ,"Toplam"};
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2 style="text-align:center ; color :saddlebrown">Veri Tabanı İsterleri</h2>
+<br />
+<div class="table">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                @{
+                    foreach (var head in TableHeaders)
+                    {
+                        <th>
+                            @head
+                        </th>
+
+                    }
+                    <th>
+                        Yeni
+                    </th>
+
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (Model != null)
+                {
+                    foreach (var Data in Model)
+                    {
+                        <tr>
+                            <td>@Data.faturaSeriNo</td>
+                            <td>@Data.tarih</td>
+                            <td>@Data.saat</td>
+                            <td>@Data.teslimEden</td>
+                            <td>@Data.teslimAlan</td>
+                            <td>@Data.Toplam</td>
+                            <td><a href="/Veri/Yeni" class="btn btn-success" style="width:150px">Yeni</a></td>
+
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>

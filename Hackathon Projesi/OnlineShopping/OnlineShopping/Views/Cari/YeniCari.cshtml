@@ -1,0 +1,27 @@
+﻿@model OnlineShopping.Models.Sınıflar.Cariler
+@{
+    ViewBag.Title = "YeniCari";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Cari Sayfası</h2>
+<br />
+<form method="post" class="from-group">
+    @Html.LabelFor(X => X.cariAd)
+    @Html.TextBoxFor(X => X.cariAd, new {@class="form-" +
+    "control" })
+    <br />
+    @Html.LabelFor(X => X.cariSoyad)
+    @Html.TextBoxFor(X => X.cariSoyad, new {@class="form-" +
+    "control" })
+    <br />
+    @Html.LabelFor(X => X.cariSehir)
+    @Html.TextBoxFor(X => X.cariSehir, new {@class="form-" +
+    "control" })
+    <br />
+    @Html.LabelFor(X => X.cariMail)
+    @Html.TextBoxFor(X => X.cariMail, new {@class="form-" +
+    "control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
